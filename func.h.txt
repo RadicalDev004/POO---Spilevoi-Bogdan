@@ -1,0 +1,8 @@
+#include "student.h"
+
+int CompareName(Student s1, Student s2);
+int CompareAvarage(Student s1, Student s2);
+        
+int CompareMathGrade(Student s1, Student s2);
+int CompareEnglishGrade(Student s1, Student s2);
+int CompareHistoryGrade(Student s1, Student s2);

@@ -1,0 +1,89 @@
+#include "student.h"
+
+
+
+int Mystrlen(char *c)
+{
+    int size = 0;
+
+    while(c[size] != '\0')
+        size++;
+    return size + 1;
+
+}
+
+int MyStrcmp(char *c1, char *c2)
+{
+    int len = Mystrlen(c1) < Mystrlen(c2) ? Mystrlen(c1) : Mystrlen(c2);
+    for(int i = 0; i < len; i++)
+    {
+        if(c1[i] < c2[i])
+            return -1;
+        if(c1[i] > c2[i])
+            return 1;
+    }
+    if(Mystrlen(c1) < Mystrlen(c2))
+        return -1;
+    if(Mystrlen(c1) > Mystrlen(c2))
+        return 1;
+    return 0;
+}
+
+void Mystrcpy(char *c1, char *c2)
+{
+    for(int i = 0; i < Mystrlen(c2); i++)
+    {
+        c1[i] = c2[i];
+    }
+    c1[Mystrlen(c2)] = '\0';
+}
+
+char* Student::GetName()
+{
+    char *nm = new char[50];
+    Mystrcpy(nm, this->name);
+    return nm;
+}
+
+void Student::SetName(const char *newName)
+{
+    Mystrcpy(this->name, (char*)newName);
+}
+
+float Student::GetMathGrade()
+{
+    return this->Grades[0];
+}
+void Student::SetMathGrade(float newGrade)
+{
+    this->Grades[0] = newGrade;  
+}
+
+float Student::GetEnglishGrade()
+{
+    return this->Grades[1];
+}
+void Student::SetEnglishGrade(float newGrade)
+{
+    this->Grades[1] = newGrade;  
+}
+
+float Student::GetHistoryGrade()
+{
+    return this->Grades[2];
+}
+void Student::SetHistoryGrade(float newGrade)
+{
+    this->Grades[2] = newGrade;  
+}
+
+float Student::GetAvarage()
+{
+    float sum = this->Grades[0] + this->Grades[1] + this->Grades[2];
+    return sum / 3;
+}
+
+
+
+
+

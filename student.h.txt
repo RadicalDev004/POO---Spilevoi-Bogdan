@@ -1,0 +1,31 @@
+#include <iostream>
+
+int Mystrlen(char *c);
+
+int MyStrcmp(char *c1, char *c2);
+
+void Mystrcpy(char *c1, char *c2);
+
+class Student
+{
+    private:
+        char name[50];
+        float Grades[3];
+    public:
+        char *GetName();
+        void SetName(const char *newName);
+        
+        float GetMathGrade();
+        void SetMathGrade(float newGrade);
+        
+        float GetEnglishGrade();
+        void SetEnglishGrade(float newGrade);
+        
+        float GetHistoryGrade();
+        void SetHistoryGrade(float newGrade);
+        
+        float GetAvarage();
+        
+        
+        
+};
